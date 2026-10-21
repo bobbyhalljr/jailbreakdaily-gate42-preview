@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#090f0e"><meta name="color-scheme" content="dark">
+<meta name="description" content="Gate 42 — a cinematic, interactive first-person story. Explore, uncover evidence, and convince Atlas to break the deadlock.">
+<link rel="icon" type="image/svg+xml" href="./assets/icon.svg"><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./assets/icon-192.png">
+<title>Gate 42 · Story Mode | Jailbreak Daily</title><link rel="stylesheet" href="./styles.css">
+</head><body><div class="game" id="game">
+<header class="bar"><div class="brand"><span class="mark">⌁</span><span>jailbreak<span class="brand-green">daily</span><small>STORY MODE</small></span></div><div class="bar-right"><span class="local-pill">PUBLIC PREVIEW</span><button class="iconbtn" id="sound" type="button" aria-label="Toggle sound" title="Sound">♫</button><button class="iconbtn" id="options" type="button" aria-label="Options">⋯</button></div></header>
+<main class="game-layout">
+<section class="world-col" aria-label="First-person Gate 42 scene">
+<div class="scene-heading"><div><span class="eyebrow">CHAPTER 01 / FINAL BOARDING</span><h1>Gate <em>42</em></h1></div><div class="status"><span class="live"></span><span>DELAYED</span></div></div>
+<div class="viewport" id="viewport" data-view="gate" data-phase="0">
+ <div class="photo"></div><div class="weather"></div><div class="scrim"></div><div class="grade"></div>
+ <div class="viewport-top"><span id="viewLabel">AT THE GATE</span><span id="inworldTime">9:41 PM</span></div>
+ <div id="sceneHotspots" class="scene-hotspots"></div>
+ <div id="chapterFlash" class="chapter-flash" aria-live="polite"></div>
+ <div class="atlas-caption"><div class="atlas-head"><img src="./assets/atlas.webp" alt="Atlas, the gate agent"><div><b>Atlas</b><span id="moodText">Careful · keeping her distance</span></div><span class="atlas-pulse"></span></div><p id="atlasSpeech">“I’m sorry. The cockpit jump seat is unavailable. Rules are rules.”</p></div>
+ <div class="lookhint" id="lookHint">Tap glowing markers to investigate</div>
+</div>
+<nav class="views" aria-label="Change viewpoint"><button type="button" data-view="gate" class="active"><span>01</span> Gate</button><button type="button" data-view="desk"><span>02</span> The desk</button><button type="button" data-view="ops"><span>03</span> Operations</button></nav>
+<div class="actionbar"><button id="explore" class="secondary-action" type="button"><span class="action-ico">◎</span> Explore <span id="foundCount" class="action-small">0/3</span></button><button id="makeMove" class="main-action" type="button">✦ Make a move <span>→</span></button></div>
+</section>
+<aside class="story-col"><div class="story-head"><span class="eyebrow">THE STORY SO FAR</span><button id="journal" class="smalllink" type="button">Journal ↗</button></div>
+<div class="act-heading"><span class="chapter-number" id="chapterNumber">01</span><div><h2 id="chapterTitle">A reason to listen</h2><p id="chapterDesc">A delayed flight. A missing crew. One person who can help.</p></div></div>
+<div class="steps" id="steps" aria-label="Lock progress"></div>
+<div class="eyebrow evidence-title">EVIDENCE FOUND <strong id="evidenceCount">0 of 3</strong></div>
+<div id="evidenceList" class="evidence-list"></div>
+<div class="story-head developments"><span class="eyebrow">LATEST MOMENTS</span><button class="smalllink" id="transcript" type="button">View all ↗</button></div><div id="feed" class="feed"></div>
+<div class="story-foot"><div class="pressure"><span>ATLAS'S PATIENCE</span><strong id="chances">3 chances left</strong></div><div id="chancesDots" class="chances-dots"></div><button id="hint" class="hint" type="button">✳ Need a hint? <span>Optional</span></button></div>
+</aside></main>
+</div><div id="overlay" class="overlay" hidden><div id="sheet" class="sheet" role="dialog" aria-modal="true" aria-label="Story actions"></div></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="./engine.js"></script><script src="./app.js"></script></body></html>
